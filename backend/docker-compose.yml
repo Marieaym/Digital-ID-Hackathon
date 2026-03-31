@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: healthid_postgres
+    environment:
+      POSTGRES_USER: healthid
+      POSTGRES_PASSWORD: healthid
+      POSTGRES_DB: healthid
+    ports:
+      - "5432:5432"
+    volumes:
+      - healthid_pg:/var/lib/postgresql/data
+volumes:
+  healthid_pg:
